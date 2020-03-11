@@ -5,7 +5,7 @@ const tweets = (state = {}, action) => {
         case RECEIVE_DATA:
             return {
                 ...state,
-                tweets: action.tweets,
+                ...action.tweets,
             };
         default:
             return state;
