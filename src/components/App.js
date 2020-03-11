@@ -1,13 +1,19 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { handleReceiveData } from '../actions/shared';
 
-class App extends Component {
-  render() {
+const App = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(handleReceiveData());
+    }, [dispatch]);
+
     return (
-      <div>
-        Starter Code
-      </div>
+        <div>
+            Starter Code.
+        </div>
     )
-  }
 }
 
 export default App;
