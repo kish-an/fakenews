@@ -1,5 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+.container {
+    max-width: 70rem;
+    margin: 0 auto;
+    padding: 0.75rem;
+}
+
+.center {
+    text-align: center;
+}
+
+ul {
+    padding-left: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #252525;
+}
+
+a.active {
+    font-weight: bold;
+}
+
+.nav ul {
+    display: flex;
+}
+
+.nav ul li {
+    list-style: none;
+    padding: 0.75rem
 }
