@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { formatDate } from '../utils/helpers';
 import { TiArrowBackOutline, TiHeartOutline, TiHeartFullOutline } from 'react-icons/ti';
+import { handleToggleTweetLike } from '../actions/tweets';
 
 const TweetCard = ({ tweet }) => {
     const { name, avatarURL, replyUserId, authedUser } = useSelector(state => {
@@ -23,6 +24,12 @@ const TweetCard = ({ tweet }) => {
             authedUser,
         }
     });
+    const dispatch = useDispatch();
+
+    const toggleLike = (e, hasLiked) => {
+        e.preventDefault();
+        dispatch(handleToggleTweetLike(tweet.id, authedUser, hasLiked));
+    }
 
     const { timestamp, replyingTo, text, replies, likes, id } = tweet;
 
@@ -43,10 +50,11 @@ const TweetCard = ({ tweet }) => {
                         <button className='heart-button'>
                             {likes.includes(authedUser)
                                 ? <TiHeartFullOutline
-                                        className='icon'
-                                        color='rgb(224, 36, 94)'
-                                    />
-                                :  <TiHeartOutline className='icon' />
+                                    className='icon'
+                                    color='rgb(224, 36, 94)'
+                                    onClick={(e) => toggleLike(e, true)}
+                                />
+                                : <TiHeartOutline className='icon' onClick={(e) => toggleLike(e, false)} />
                             }
                         </button>
                         <span>{likes.length > 0 ? likes.length : null}</span>
