@@ -80,6 +80,10 @@ a.active {
     font-size: 1.125rem;
 }
 
+.tweet-info p {
+    word-break: break-word;
+}
+
 .tweet-icons {
     display: flex;
     align-items: center;
@@ -109,3 +113,45 @@ a.active {
     font-size: 1.15rem;
 }
 
+.add-tweet {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 37.5rem;
+}
+
+.content {
+    border-radius: 4px;
+    border: 1px solid #dad7d7;
+    padding: 0.65rem;
+    font-size: 0.9rem;
+    height: 6.25rem;
+}
+
+.btn {
+    text-transform: uppercase;
+    margin: 2rem auto;
+    padding: 0.8rem;
+    border-radius: 3px;
+    background: transparent;
+    border: 1px solid #969696;
+    width: 15rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.btn:disabled:hover {
+    cursor: not-allowed;
+}
+
+.remaining-chars {
+    text-align: right;
+    margin-top: 1rem;
+    color: rgb(218, 67, 67);
+    font-weight: bold;
+}
+
+.tweet-info .hash-tag {
+    color: rgb(29, 160, 242);
+    font-weight: normal;
+}

@@ -42,7 +42,7 @@ const TweetCard = ({ tweet }) => {
                     <div className='time'>{formatDate(timestamp)}</div>
                     {replyingTo && <div className='reply'>Replying to @{replyUserId}</div>}
 
-                    <p>{text}</p>
+                    <p dangerouslySetInnerHTML={{__html: text}}></p>
 
                     <div className='tweet-icons'>
                         <TiArrowBackOutline className='icon' />

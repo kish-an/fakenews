@@ -131,7 +131,7 @@ let tweets = {
   "3km0v4hf1ps92ajf4z2ytg": {
     id: "3km0v4hf1ps92ajf4z2ytg",
     author: "McConaughey",
-    text: "Alright, Alright, Alright",
+      text: "Alright, Alright, <span class='hash-tag'>#Alright</span>",
     timestamp: 1518122667860,
     likes: [],
     replyingTo: "8xf0y6ziyjabvozdd253nd",

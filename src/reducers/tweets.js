@@ -1,5 +1,6 @@
 import { RECEIVE_DATA } from '../actions/shared';
 import { TOGGLE_TWEET_LIKE } from '../actions/tweets';
+import { ADD_TWEET } from '../actions/tweets';
 
 const tweets = (state = {}, action) => {
     switch (action.type) {
@@ -20,6 +21,15 @@ const tweets = (state = {}, action) => {
                         : state[id].likes.concat([authedUser]),
                 }
             };
+        case ADD_TWEET:
+            const { tweet } = action;
+
+            return {
+                ...state,
+                [tweet.id]: {
+                    ...tweet,
+                }
+            }
         default:
             return state;
     }
