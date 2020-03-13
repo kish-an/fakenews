@@ -1,5 +1,5 @@
 export const SET_AUTHED_USER = 'SET_AUTHED_USER';
-// Hardcoded authed user
+// Hardcoded initial authed user
 export const id = 'realDonaldTrump';
 
 export const setAuthedUser = id => ({

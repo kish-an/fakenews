@@ -152,6 +152,41 @@ a.active {
 }
 
 .tweet-info .hash-tag {
-    color: rgb(29, 160, 242);
+    color: #1da0f2;
     font-weight: normal;
+}
+
+ul.account-list {
+    list-style: none;
+    padding: 0;
+    margin-left: 1rem;
+}
+
+.account {
+    margin: 1.5rem 0;
+    border: 1px solid #dad7d77e;
+    border-radius: 3px;
+    padding: 1rem;
+    max-width: 50rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.account:hover {
+   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.account img {
+    border-radius: 50%;
+    height: 5.25rem;
+    margin-right: 1rem;
+}
+
+.account .info h3 {
+    margin: 0.3rem auto;
+}
+
+.account .info span {
+    color: #969696;
 }
