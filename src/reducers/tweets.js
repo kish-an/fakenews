@@ -23,13 +23,24 @@ const tweets = (state = {}, action) => {
             };
         case ADD_TWEET:
             const { tweet } = action;
+            const { replyingTo } = tweet;
 
+            let replyTweet = {};
+            if (replyingTo !== null) {
+                replyTweet = {
+                    [replyingTo]: {
+                        ...state[replyingTo],
+                        replies: state[replyingTo].replies.concat([tweet.id]),
+                    }
+                }
+            }
             return {
                 ...state,
                 [tweet.id]: {
                     ...tweet,
-                }
-            }
+                },
+                ...replyTweet,
+            };
         default:
             return state;
     }

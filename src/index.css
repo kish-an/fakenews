@@ -74,6 +74,13 @@ a.active {
     color: #969696;
     font-size: 0.75rem;
     margin-top: 0.2rem;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.reply:hover {
+    color: #1da0f2;
 }
 
 .tweet-info {

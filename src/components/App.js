@@ -7,6 +7,7 @@ import Timeline from './Timeline';
 import Nav from './Nav';
 import AddTweet from './AddTweet';
 import Accounts from './Accounts';
+import Replies from './Replies';
 
 const App = () => {
     const isLoading = useSelector(state => state.authedUser === null);
@@ -30,6 +31,7 @@ const App = () => {
                                     <Route exact path='/' component={Timeline} />
                                     <Route path='/new' component={AddTweet} />
                                     <Route path='/account' component={Accounts} />
+                                    <Route path='/tweet/:id' component={Replies} />
                                     <Redirect to='/' />
                                 </Switch>
                             </>

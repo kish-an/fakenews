@@ -7,6 +7,10 @@ const TweetForm = ({ handleSubmit, formTitle, user }) => {
         setContent(e.target.value);
     }
 
+    const clearInput = () => {
+        setContent('');
+    }
+
     const maxChars = 280;
 
     return (
@@ -14,7 +18,7 @@ const TweetForm = ({ handleSubmit, formTitle, user }) => {
             <h3 className='center'>{formTitle}</h3>
             <form
                 className='add-tweet'
-                onSubmit={e => handleSubmit(e, content)}
+                onSubmit={e => handleSubmit(e, content, clearInput)}
             >
                 <textarea
                     value={content}

@@ -40,7 +40,13 @@ const TweetCard = ({ tweet }) => {
                 <div className='tweet-info'>
                     <span>{name}</span>
                     <div className='time'>{formatDate(timestamp)}</div>
-                    {replyingTo && <div className='reply'>Replying to @{replyUserId}</div>}
+                    {replyingTo &&
+                        <Link to={`/tweet/${replyingTo}`}>
+                            <button className='reply'>
+                                Replying to @{replyUserId}
+                            </button>
+                        </Link>
+                    }
 
                     <p dangerouslySetInnerHTML={{__html: text}}></p>
 
